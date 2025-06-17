@@ -11,3 +11,22 @@
 #    - Si todos tienen más de 10, muestra un mensaje indicando que el stock es suficiente.
 #
 # Escribe tu solución debajo de este comentario.
+stocks = [25, 15, 8, 30, 10]
+
+total_productos = sum(stocks)
+print(f"La suma total de productos en bodega es: {total_productos}")
+print("-" * 30) 
+
+productos_bajo_stock = []
+for indice, cantidad in enumerate(stocks):
+
+  if cantidad <= 10:
+    productos_bajo_stock.append(indice + 1)
+
+if productos_bajo_stock:
+  print("Se encontraron productos con bajo stock.")
+  for producto_id in productos_bajo_stock:
+  
+    print(f" -> El Producto {producto_id} tiene bajo stock: {stocks[producto_id - 1]} unidades.")
+else:
+  print(" El stock de todos los productos es suficiente (más de 10 unidades).")
